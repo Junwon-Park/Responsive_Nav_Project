@@ -1,0 +1,92 @@
+:root {
+  --text-color: white;
+  --background-color: #263343;
+  --logo-color: #d49446;
+}
+
+body {
+  margin: 0px;
+}
+
+a {
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+i {
+  color: var(--text-color);
+}
+
+li {
+  list-style: none;
+}
+
+#container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--background-color);
+  padding: 8px 12px;
+}
+
+.logo__title {
+  display: flex;
+  justify-content: space-between;
+  padding: 0;
+  color: var(--text-color);
+  font-size: 20px;
+}
+
+.logo__title i {
+  color: var(--logo-color);
+  font-size: 30px;
+}
+
+.menu__list {
+  display: flex;
+  padding: 0;
+}
+
+.menu__list li {
+  padding: 13px 12px;
+}
+
+.menu__list li:hover {
+  background-color: var(--logo-color);
+  border-radius: 4px;
+}
+
+.logo i {
+  margin-right: 10px;
+}
+
+.icon__list {
+  display: flex;
+  padding: 0;
+}
+
+.icon__list i {
+  padding: 8px;
+}
+
+@media screen and (max-width: 768px) {
+  #container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .menu__list {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .menu__list li {
+    width: 100%;
+    text-align: center;
+  }
+
+  .icon__list {
+    align-self: center;
+  }
+}
