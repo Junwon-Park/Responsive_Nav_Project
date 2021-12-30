@@ -69,6 +69,10 @@ li {
   padding: 8px;
 }
 
+.nav__toggleBtn {
+  display: none;
+}
+
 @media screen and (max-width: 768px) {
   #container {
     flex-direction: column;
@@ -76,6 +80,7 @@ li {
   }
 
   .menu__list {
+    display: none;
     flex-direction: column;
     align-items: center;
     width: 100%;
@@ -87,6 +92,25 @@ li {
   }
 
   .icon__list {
+    display: none;
     align-self: center;
+    margin: 0;
+    padding-top: 20px;
+  }
+
+  .nav__toggleBtn {
+    position: absolute;
+    right: 10px;
+    font-size: 24px;
+    padding: 20px 20px;
+  }
+
+  .nav__toggleBtn {
+    display: block;
+  }
+
+  .menu__list.active,
+  .icon__list.active {
+    display: flex;
   }
 }
