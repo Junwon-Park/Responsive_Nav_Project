@@ -3,6 +3,10 @@
   --background-color: #263343;
   --logo-color: #d49446;
 }
+/*
+    :root 속성으로 css 변수 사용 가능
+    위 처럼 색상 뿐만 아니라 px, %, em, rem 등의 사이즈도 변수에 저장하여 사용할 수 있다.
+*/
 
 body {
   margin: 0px;
@@ -25,6 +29,7 @@ li {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  font-family: 'Pushster', cursive;
   background-color: var(--background-color);
   padding: 8px 12px;
 }
@@ -73,20 +78,38 @@ li {
   display: none;
 }
 
+/*
+media queries를 사용하려면 @media라는 프리픽스를 쓰는 것으로 시작한다.
+그리고 screen과 같은 해당 media queries의 속성을 쓰고 max-width, min-width와 같은 다른 속성도 추가하려면 and 연산자를 사용해서 
+여러 개의 속성을 추가할 수 있다.
+*/
 @media screen and (max-width: 768px) {
+  /*
+    max-width: 768px은 너비가 768px 이하일 때(0 ~ 768px) 동작하도록 속성을 준 것이다.
+  */
   #container {
     flex-direction: column;
     align-items: flex-start;
+    font-family: 'Pushster', cursive;
   }
 
   .menu__list {
     display: none;
+    width: 100%;
     flex-direction: column;
     align-items: center;
-    width: 100%;
   }
 
   .menu__list li {
+    /*
+    width값을 주게 되면 자동으로 왼쪽 정렬되기 때문에 
+    li 내에 있는 컨텐츠를 가운데 정렬하기 위해 text-align: center로 속성을 주었다.
+    %단위가 아니라도 일단 width 값을 주면 왼쪽으로 정렬된다.
+    그렇기 때문에 text-align을 center로 지정해서 해당 아이템 내에서 다시
+    가운데 정렬을 해준 것이다.
+    100%가 아니라도 무조건 이 값을 주면 왼쪽으로정렬된다.
+    아이템의 컨텐츠를 해당 아이템 안에서 정렬할 때, text-align을 사용한다.
+    */
     width: 100%;
     text-align: center;
   }
